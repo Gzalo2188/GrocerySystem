@@ -15,8 +15,8 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
-        app:backgroundTint="@color/colorAccent"
+        app:backgroundTint="#D559B4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/stat_sys_phone_call_on_hold" />
+        app:srcCompat="@drawable/shoppingCartIcon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
