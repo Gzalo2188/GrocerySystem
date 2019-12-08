@@ -43,10 +43,7 @@ class ShoppingPortal : AppCompatActivity() {
 
                 if(p0.exists()){
                     products.clear()
-                    var num: Int
-                    num = 0
                     for(p in p0.children){
-                        num++
                         val localProduct = p.getValue(Product::class.java)
                         products.add(localProduct!!)
                     }
