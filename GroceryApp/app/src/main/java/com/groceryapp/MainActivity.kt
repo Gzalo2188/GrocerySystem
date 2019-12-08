@@ -9,6 +9,14 @@ import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.util.Log.d
+import android.widget.ListView
+import com.google.firebase.database.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         loginButton.setOnClickListener{
             startActivity(Intent(this, ShoppingPortal::class.java))
         }
+
     }
 
 
