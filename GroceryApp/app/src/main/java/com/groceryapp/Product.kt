@@ -1,8 +1,8 @@
 package com.groceryapp
 
-class Product(val name: String, val quantity: String) {
+class Product(val id: String, val name: String, val quantity: Int) {
 
-    constructor() : this("",""){
+    constructor() : this("", "",0){
 
     }
 }

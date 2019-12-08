@@ -7,6 +7,7 @@ import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.SearchView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,10 +17,9 @@ import kotlinx.android.synthetic.main.activity_shopping_portal.*
 class ShoppingPortal : AppCompatActivity() {
 
     lateinit var  listView: ListView
-
-    lateinit var database: DatabaseReference
-    lateinit var  products: MutableList<String>
-    var displayList:MutableList<String> = ArrayList()
+    lateinit var ref: DatabaseReference
+    lateinit var  products: MutableList<Product>
+    var displayList:MutableList<Product> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +27,37 @@ class ShoppingPortal : AppCompatActivity() {
         cartFab.setOnClickListener{
             startActivity(Intent(this, ShoppingCart::class.java))
         }
+        loadFirebase()
+        productList.layoutManager = LinearLayoutManager(this@ShoppingPortal)
 
+        //Toast.makeText(applicationContext, "Before the ref event.", Toast.LENGTH_SHORT).show()
         products = mutableListOf()
-        val database = FirebaseDatabase.getInstance().getReference("Products")
+        ref = FirebaseDatabase.getInstance().getReference("Products")
+        ref.addValueEventListener(object: ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+
+
+                if(p0.exists()){
+                    products.clear()
+                    var num: Int
+                    num = 0
+                    for(p in p0.children){
+                        num++
+                        val localProduct = p.getValue(Product::class.java)
+                        products.add(localProduct!!)
+                    }
+                    displayList.addAll(products)
+                    productList.adapter = ProductAdapter(displayList, applicationContext)
+                }
+            }
+
+        })
+
+
 
 /*        database.addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
@@ -60,9 +88,7 @@ class ShoppingPortal : AppCompatActivity() {
 
         }*/
 
-        loadFirebase()
-        productList.layoutManager = LinearLayoutManager(this@ShoppingPortal)
-        productList.adapter = ProductAdapter(displayList, this)
+
     }
 
    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -81,7 +107,7 @@ class ShoppingPortal : AppCompatActivity() {
                     if(newText!!.isNotEmpty()){
                         val search = newText.toLowerCase()
                         products.forEach {
-                            if(it.toLowerCase().contains(search)){
+                            if(it.name.toLowerCase().contains(search)){
                                 displayList.add(it)
                             }
                         }
@@ -98,7 +124,9 @@ class ShoppingPortal : AppCompatActivity() {
     }
 
     private fun loadFirebase(){
-        products.add("Apple")
+
+
+/*        products.add("Apple")
         products.add("Banana")
         products.add("Potato")
         products.add("Tomato")
@@ -116,7 +144,13 @@ class ShoppingPortal : AppCompatActivity() {
         products.add("Green Pepper")
         products.add("Yellow Pepper")
 
-        displayList.addAll(products)
+        displayList.addAll(products)*/
 
+        //DO NOT FOR WHATEVER REASON UNCOMMENT THIS CODE, OTHERWISE THE DATABASE WILL GET CLUTTERED
+/*      val ref = FirebaseDatabase.getInstance().getReference("Users")
+        val productId = ref.push().key
+        val product = User(productId!!,"placeholder", "placeholder")
+
+        ref.child(productId).setValue(product)*/
     }
 }
