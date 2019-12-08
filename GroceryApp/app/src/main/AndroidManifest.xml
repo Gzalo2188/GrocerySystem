@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".ShoppingPortal" />
         <activity android:name=".ShoppingCart" />
+        <activity android:name=".SignUp" />
     </application>
 
 </manifest>
