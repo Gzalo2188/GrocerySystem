@@ -35,7 +35,8 @@
         android:inputType="textPassword"
         android:padding="15dp"
         app:layout_constraintBottom_toTopOf="@+id/password2"
-        tools:layout_editor_absoluteX="30dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/password2"
@@ -51,7 +52,8 @@
         android:inputType="textPassword"
         android:padding="15dp"
         app:layout_constraintBottom_toTopOf="@+id/signUpButton"
-        tools:layout_editor_absoluteX="30dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/username"
@@ -67,6 +69,7 @@
         android:inputType="textPersonName"
         android:padding="15dp"
         app:layout_constraintBottom_toTopOf="@+id/password1"
-        tools:layout_editor_absoluteX="30dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
