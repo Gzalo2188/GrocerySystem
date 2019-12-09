@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.*
+import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
@@ -19,22 +20,21 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 /*
-Checks if SignUp Success
+Checks if login Success
  */
-
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class signUpTest {
+class LoginTest {
 
     @Rule
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun signUpTest() {
-        val appCompatTextView = onView(
+    fun loginTest() {
+        val appCompatEditText = onView(
             allOf(
-                withId(R.id.signUp), withText("Sign Up"),
+                withId(R.id.usernameText),
                 childAtPosition(
                     allOf(
                         withId(R.id.include),
@@ -43,22 +43,7 @@ class signUpTest {
                             1
                         )
                     ),
-                    3
-                ),
-                isDisplayed()
-            )
-        )
-        appCompatTextView.perform(click())
-
-        val appCompatEditText = onView(
-            allOf(
-                withId(R.id.username),
-                childAtPosition(
-                    childAtPosition(
-                        withId(android.R.id.content),
-                        0
-                    ),
-                    3
+                    2
                 ),
                 isDisplayed()
             )
@@ -67,11 +52,14 @@ class signUpTest {
 
         val appCompatEditText2 = onView(
             allOf(
-                withId(R.id.password1),
+                withId(R.id.passwordText),
                 childAtPosition(
-                    childAtPosition(
-                        withId(android.R.id.content),
-                        0
+                    allOf(
+                        withId(R.id.include),
+                        childAtPosition(
+                            withClassName(`is`("androidx.coordinatorlayout.widget.CoordinatorLayout")),
+                            1
+                        )
                     ),
                     1
                 ),
@@ -80,28 +68,16 @@ class signUpTest {
         )
         appCompatEditText2.perform(replaceText("buckets"), closeSoftKeyboard())
 
-        val appCompatEditText3 = onView(
-            allOf(
-                withId(R.id.password2),
-                childAtPosition(
-                    childAtPosition(
-                        withId(android.R.id.content),
-                        0
-                    ),
-                    2
-                ),
-                isDisplayed()
-            )
-        )
-        appCompatEditText3.perform(replaceText("buckets"), closeSoftKeyboard())
-
         val appCompatButton = onView(
             allOf(
-                withId(R.id.registerButton), withText("Register"),
+                withId(R.id.loginButton), withText("Log In"),
                 childAtPosition(
-                    childAtPosition(
-                        withId(android.R.id.content),
-                        0
+                    allOf(
+                        withId(R.id.include),
+                        childAtPosition(
+                            withClassName(`is`("androidx.coordinatorlayout.widget.CoordinatorLayout")),
+                            1
+                        )
                     ),
                     0
                 ),
@@ -109,6 +85,24 @@ class signUpTest {
             )
         )
         appCompatButton.perform(click())
+
+        val viewGroup = onView(
+            allOf(
+                withId(R.id.action_bar),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.action_bar_container),
+                        childAtPosition(
+                            withId(R.id.decor_content_parent),
+                            0
+                        )
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        viewGroup.check(matches(isDisplayed()))
     }
 
     private fun childAtPosition(
