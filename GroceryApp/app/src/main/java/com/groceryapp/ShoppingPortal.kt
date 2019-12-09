@@ -27,7 +27,8 @@ class ShoppingPortal : AppCompatActivity() {
         cartFab.setOnClickListener{
             startActivity(Intent(this, ShoppingCart::class.java))
         }
-        loadFirebase()
+
+        //loadFirebase()
         productList.layoutManager = LinearLayoutManager(this@ShoppingPortal)
 
         //Toast.makeText(applicationContext, "Before the ref event.", Toast.LENGTH_SHORT).show()
@@ -144,9 +145,9 @@ class ShoppingPortal : AppCompatActivity() {
         displayList.addAll(products)*/
 
         //DO NOT FOR WHATEVER REASON UNCOMMENT THIS CODE, OTHERWISE THE DATABASE WILL GET CLUTTERED
-/*      val ref = FirebaseDatabase.getInstance().getReference("Users")
+/*        val ref = FirebaseDatabase.getInstance().getReference("Products")
         val productId = ref.push().key
-        val product = User(productId!!,"placeholder", "placeholder")
+        val product = Product(productId!!,"placeholder", 100)
 
         ref.child(productId).setValue(product)*/
     }
