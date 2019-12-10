@@ -30,6 +30,7 @@ class ProductAdapter(items : MutableList<Product>, ctx: Context): RecyclerView.A
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name?.text = list[position].name
+        holder.productPrice.text = "" + list[position].price
 
     }
 
@@ -38,10 +39,12 @@ class ProductAdapter(items : MutableList<Product>, ctx: Context): RecyclerView.A
         protected var button: Button
         val qty: TextView
         val productName: TextView
+        val productPrice: TextView
 
         init {
             qty = itemView.findViewById(R.id.qtyBox) as TextView
             productName = itemView.findViewById(R.id.productText) as TextView
+            productPrice = itemView.findViewById(R.id.productPrice) as TextView
             button = itemView.findViewById(R.id.addButton) as Button
 
             button.setTag(R.integer.btn_add_view, itemView)

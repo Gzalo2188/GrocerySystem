@@ -5,7 +5,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF2F2"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -16,7 +16,7 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/carticon"
-        app:backgroundTint="@color/colorPrimaryDark"
+        app:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

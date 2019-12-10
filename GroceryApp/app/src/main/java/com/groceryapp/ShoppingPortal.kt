@@ -55,38 +55,6 @@ class ShoppingPortal : AppCompatActivity() {
 
         })
 
-
-
-/*        database.addListenerForSingleValueEvent(object: ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {
-
-            }
-
-            override fun onDataChange(p0: DataSnapshot) {
-                if(p0.exists()){
-                    products.clear()
-                    for(product in p0.children){
-                        val tempProduct = product.getValue(Product::class.java)
-                        d("Product from Database: ", product.getValue().toString())
-                        d("Product Class: ", tempProduct!!.name + " " + tempProduct!!.quantity)
-                        products.add(tempProduct!!)
-                    }
-
-                    for(product in products){
-                        displayList.add(product.name)
-                    }
-                }
-            }
-
-        })*/
-
-/*        productList.apply{
-            layoutManager = LinearLayoutManager(this@ShoppingPortal)
-            adapter = ProductAdapter(displayList, this.context)
-
-        }*/
-
-
     }
 
    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
