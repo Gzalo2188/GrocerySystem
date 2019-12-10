@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_shopping_cart.*
-import kotlinx.android.synthetic.main.activity_payments.*
+import kotlinx.android.synthetic.main.shipping.*
 
 
 class ShoppingCart : AppCompatActivity(){
@@ -19,7 +19,7 @@ class ShoppingCart : AppCompatActivity(){
         }
 
         checkButton.setOnClickListener {
-            startActivity(Intent(this, Payment::class.java))
+            startActivity(Intent(this, Shipping::class.java))
         }
     }
 

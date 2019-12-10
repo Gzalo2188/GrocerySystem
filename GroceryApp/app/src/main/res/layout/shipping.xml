@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF2F2"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FAF2F2"
+        android:text="Delivery"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#614040"
+        android:textSize="36sp"
+        app:fontFamily="sans-serif-light" />
+
+    <Button
+        android:id="@+id/homeButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Home"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FF757171"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="70dp"
+        android:background="#FAF2F2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/editText13"
+            android:layout_width="159dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="237dp"
+            android:layout_marginRight="237dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Delivery Address: "
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="559dp">
+
+            <EditText
+                android:id="@+id/firstNameTextView"
+                android:layout_width="163dp"
+                android:layout_height="41dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorPrimary"
+                android:hint="First Name:"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/addressTextView"
+                android:layout_width="163dp"
+                android:layout_height="41dp"
+                android:layout_alignTop="@id/firstNameTextView"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="70dp"
+                android:background="@color/colorPrimary"
+                android:hint="Address: "
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/stateTextView"
+                android:layout_width="163dp"
+                android:layout_height="41dp"
+                android:layout_alignTop="@id/addressTextView"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="81dp"
+                android:background="@color/colorPrimary"
+                android:hint="State:"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/emailTextView2"
+                android:layout_width="163dp"
+                android:layout_height="41dp"
+                android:layout_alignTop="@id/stateTextView"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="75dp"
+                android:background="@color/colorPrimary"
+                android:hint="Email Address:"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/lastNameTextView"
+                android:layout_width="163dp"
+                android:layout_height="41dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="232dp"
+                android:background="@color/colorPrimary"
+                android:hint="Last Name:"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/cityTextView"
+                android:layout_width="163dp"
+                android:layout_height="41dp"
+                android:layout_alignTop="@id/lastNameTextView"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="75dp"
+                android:background="@color/colorPrimary"
+                android:hint="City: "
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/zipCodeTextView"
+                android:layout_width="163dp"
+                android:layout_height="41dp"
+                android:layout_alignTop="@id/cityTextView"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="78dp"
+                android:background="@color/colorPrimary"
+                android:hint="ZIP Code:"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/phoneView2"
+                android:layout_width="163dp"
+                android:layout_height="38dp"
+                android:layout_alignTop="@id/zipCodeTextView"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="74dp"
+                android:background="@color/colorPrimary"
+                android:hint="Phone Number: "
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/deliveryOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="296dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="-6dp">
+
+                <TextView
+                    android:id="@+id/editText12"
+                    android:layout_width="159dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginEnd="237dp"
+                    android:layout_marginRight="237dp"
+                    android:layout_marginBottom="12dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Delivery Options: "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/standardButton"
+                    android:layout_width="267dp"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="72dp"
+                    android:layout_marginLeft="72dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="72dp"
+                    android:layout_marginRight="72dp"
+                    android:text="Standard Delivery: $10.00" />
+
+                <RadioButton
+                    android:id="@+id/expressButton"
+                    android:layout_width="265dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="72dp"
+                    android:layout_marginLeft="72dp"
+                    android:layout_marginEnd="74dp"
+                    android:layout_marginRight="74dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Express Delivery: $20.00" />
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="#FAF2F2">
+
+        <Button
+            android:id="@+id/paymentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginBottom="-72dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Go to Payment"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FF757171"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

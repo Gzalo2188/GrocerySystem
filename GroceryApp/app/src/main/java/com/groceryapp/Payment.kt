@@ -19,8 +19,8 @@ class Payment: AppCompatActivity() {
             startActivity(Intent(this, ShoppingPortal::class.java))
         }
         payButton.setOnClickListener{
-            
-            //startActivity(Intent(this, ShoppingPortal::class.java))
+            Toast.makeText(applicationContext,"Payment Complete", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ShoppingPortal::class.java))
         }
 
 
