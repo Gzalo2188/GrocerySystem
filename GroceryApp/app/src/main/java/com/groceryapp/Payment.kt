@@ -11,22 +11,20 @@ class Payment: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payments)
-        val root: LinearLayout = findViewById(R.id.root)
-        val coor: CoordinatorLayout = findViewById(R.id.coor)
+
+        val actionBar = supportActionBar
+        actionBar!!.title = "Payment"
 
 
-        homeButton2.setOnClickListener{
-            startActivity(Intent(this, ShoppingPortal::class.java))
-        }
         payButton.setOnClickListener{
             
             //startActivity(Intent(this, ShoppingPortal::class.java))
         }
 
 
-        paymentMethods.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, Id ->
+        paymentMethods.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { _, Id ->
             val radio: RadioButton = findViewById(Id)
-            var flag = false
+            //var flag = false
             val editText1 = EditText(this)
             val editText2 = EditText(this)
             val editText3 = EditText(this)

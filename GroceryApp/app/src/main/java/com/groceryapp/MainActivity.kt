@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 if(p0.exists()){
                     for(p in p0.children){
                         val localUser = p.getValue(User::class.java)
-                        val tempUser : User = User(localUser!!.id, localUser!!.username, localUser!!.password)
+                        val tempUser : User = User(localUser!!.id, localUser.username, localUser.password)
                         users.add(tempUser)
                     }
                 }

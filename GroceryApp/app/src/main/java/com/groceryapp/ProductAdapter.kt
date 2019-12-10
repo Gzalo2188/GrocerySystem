@@ -16,11 +16,11 @@ class ProductAdapter(items : MutableList<Product>, ctx: Context): RecyclerView.A
     private var list = items
     private var context = ctx
 
+    var tempList : ArrayList<Product> = ArrayList<Product>()
+
     var listener: ((item: Product) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        /*val view = LayoutInflater.from(parent.context).inflate(R.layout.row_product, parent, false)
-        return ViewHolder(view)*/
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.row_product, parent, false))
     }
 
@@ -30,7 +30,7 @@ class ProductAdapter(items : MutableList<Product>, ctx: Context): RecyclerView.A
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name?.text = list[position].name
-        holder.productPrice.text = "" + list[position].price
+        holder.productPrice.text = "$" + list[position].price
 
     }
 
@@ -56,6 +56,9 @@ class ProductAdapter(items : MutableList<Product>, ctx: Context): RecyclerView.A
                     Toast.makeText(this@ProductAdapter.context, "Nothing added to cart.", Toast.LENGTH_SHORT).show()
                     return
                 }
+                ShoppingCart.cartItems.add(Product("temp", "" + productName.text,
+                                                    Integer.parseInt("" + qty.text),
+                                                    ("" + productPrice.text).replace('$', ' ').toDouble()))
                 Toast.makeText(this@ProductAdapter.context, "" + ("" + qty.text).toIntOrNull() + " " +
                                 productName.text + "(s) added to cart", Toast.LENGTH_LONG).show()
                 qty.setText("")

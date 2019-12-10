@@ -16,23 +16,29 @@ import kotlinx.android.synthetic.main.activity_shopping_portal.*
 
 class ShoppingPortal : AppCompatActivity() {
 
-    lateinit var  listView: ListView
     lateinit var ref: DatabaseReference
     lateinit var  products: MutableList<Product>
-    var displayList:MutableList<Product> = ArrayList()
+    lateinit var displayList:MutableList<Product>
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping_portal)
+
+        val actionBar = supportActionBar
+        actionBar!!.title = "Shopping Portal"
+
+
         cartFab.setOnClickListener{
             startActivity(Intent(this, ShoppingCart::class.java))
         }
 
-        //loadFirebase()
+        products = mutableListOf()
+        displayList = mutableListOf()
         productList.layoutManager = LinearLayoutManager(this@ShoppingPortal)
 
-        //Toast.makeText(applicationContext, "Before the ref event.", Toast.LENGTH_SHORT).show()
-        products = mutableListOf()
         ref = FirebaseDatabase.getInstance().getReference("Products")
         ref.addValueEventListener(object: ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
