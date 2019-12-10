@@ -24,7 +24,7 @@ Checks if SignUp Success
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class signUpTest {
+class SignUpTest {
 
     @Rule
     @JvmField

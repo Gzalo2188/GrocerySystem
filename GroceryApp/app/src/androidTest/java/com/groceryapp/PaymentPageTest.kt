@@ -20,18 +20,18 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 /*
-Logs in and adds an item to the cart
+Checks if Payment Page is reached
  */
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class AddToCartTest {
+class PaymentPageTest {
 
     @Rule
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun addToCartTest() {
+    fun paymentPageTest() {
         val appCompatEditText = onView(
             allOf(
                 withId(R.id.usernameText),
@@ -134,12 +134,30 @@ class AddToCartTest {
         )
         floatingActionButton.perform(click())
 
-        val button2 = onView(
+        val appCompatButton2 = onView(
             allOf(
-                withId(R.id.checkButton),
+                withId(R.id.checkButton), withText("Proceed to checkout"),
                 childAtPosition(
                     allOf(
                         withId(R.id.coordinatorLayout2),
+                        childAtPosition(
+                            withId(android.R.id.content),
+                            0
+                        )
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatButton2.perform(click())
+
+        val button2 = onView(
+            allOf(
+                withId(R.id.payButton),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.coor),
                         childAtPosition(
                             withId(android.R.id.content),
                             0
