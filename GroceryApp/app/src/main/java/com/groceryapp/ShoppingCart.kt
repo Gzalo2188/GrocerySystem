@@ -2,14 +2,10 @@ package com.groceryapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.ListView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_shopping_cart.*
-import kotlinx.android.synthetic.main.activity_payments.*
-import kotlinx.android.synthetic.main.activity_shopping_portal.*
+
 
 
 class ShoppingCart : AppCompatActivity(){

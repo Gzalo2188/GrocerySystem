@@ -49,6 +49,7 @@ class SignUp : AppCompatActivity(){
                 val tempUser : User = User(userId!!, username.text.toString(), password1.text.toString())
 
                 ref.child(userId).setValue(tempUser)
+
                 Toast.makeText(this, "Account created" , Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, MainActivity::class.java))
             } else if(password1.text.toString() != password2.text.toString()){

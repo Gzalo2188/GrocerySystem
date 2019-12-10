@@ -59,9 +59,7 @@ class ProductAdapter(items : MutableList<Product>, ctx: Context): RecyclerView.A
                 ShoppingCart.cartItems.add(Product("temp", "" + productName.text,
                                                     Integer.parseInt("" + qty.text),
                                                     ("" + productPrice.text).replace('$', ' ').toDouble()))
-                Toast.makeText(this@ProductAdapter.context, "" + ("" + qty.text).toIntOrNull() + " " +
-                                productName.text + "(s) added to cart", Toast.LENGTH_LONG).show()
-                qty.setText("")
+                qty.text = ""
             }
         }
 
