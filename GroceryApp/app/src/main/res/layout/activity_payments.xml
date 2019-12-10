@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FAF2F2"
+        android:text="Payment"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#614040"
+        android:textSize="36sp"
+        app:fontFamily="sans-serif-light" />
+
+    <Button
+        android:id="@+id/homeButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Home"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FF757171"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="#FAF2F2"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/nameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/emailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/phoneText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="PhoneNumber"
+            android:inputType="phone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="8sp"
+            android:text="Payment Method?"
+            android:textSize="24sp" />
+
+        <RadioGroup
+            android:id="@+id/paymentMethods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/cardPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Debit or Credit" />
+
+            <RadioButton
+                android:id="@+id/checkPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-Check" />
+
+            <RadioButton
+                android:id="@+id/giftPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gift Card" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="#FAF2F2">
+
+        <Button
+            android:id="@+id/payButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginBottom="-72dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Complete Payment"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FF757171"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
