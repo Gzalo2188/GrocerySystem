@@ -8,6 +8,12 @@ import kotlinx.android.synthetic.main.activity_payments.*
 import kotlinx.android.synthetic.main.activity_shopping_portal.*
 
 class Payment: AppCompatActivity() {
+    private val editText1 = EditText(this)
+    private val editText2 = EditText(this)
+    private val editText3 = EditText(this)
+    private val editText4 = EditText(this)
+    private val editText5 = EditText(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payments)
@@ -25,11 +31,7 @@ class Payment: AppCompatActivity() {
         paymentMethods.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { _, Id ->
             val radio: RadioButton = findViewById(Id)
             //var flag = false
-            val editText1 = EditText(this)
-            val editText2 = EditText(this)
-            val editText3 = EditText(this)
-            val editText4 = EditText(this)
-            val editText5 = EditText(this)
+
             val index = paymentMethods.indexOfChild(radio)
 
             when(index){
@@ -68,6 +70,5 @@ class Payment: AppCompatActivity() {
             }
             //Toast.makeText(applicationContext,"Clicked this button ${index}", Toast.LENGTH_SHORT).show()
             })
-
     }
 }
