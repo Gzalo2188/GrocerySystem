@@ -119,7 +119,7 @@ class ShoppingPortal : AppCompatActivity() {
         displayList.addAll(products)*/
 
         //DO NOT FOR WHATEVER REASON UNCOMMENT THIS CODE, OTHERWISE THE DATABASE WILL GET CLUTTERED
-/*        val ref = FirebaseDatabase.getInstance().getReference("Products")
+/*      val ref = FirebaseDatabase.getInstance().getReference("Products")
         val productId = ref.push().key
         val product = Product(productId!!,"placeholder", 100)
 
